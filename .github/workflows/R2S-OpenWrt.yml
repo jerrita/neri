@@ -120,7 +120,7 @@ jobs:
         gzip --best *.img
         ls -Ahl
         sha256sum openwrt*r2s* | tee R2S-GC404-$(date +%Y-%m-%d)-21.02.sha256sum
-        # zip R2S-GC404-$(date +%Y-%m-%d)-21.02-ext4.zip *r2s*ext4*
+        mv *r2s*ext4* R2S-Neri-$(date +%Y-%m-%d)-21.02-ext4-sysupgrade.img.gz
         mv *r2s*squashfs* R2S-Neri-$(date +%Y-%m-%d)-21.02-squashfs-sysupgrade.img.gz
         ls -Ahl
     - name: Upload artifact

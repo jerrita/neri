@@ -1,0 +1,5 @@
+
+config core 'main'
+	option lang 'auto'
+	option mediaurlbase '/luci-static/material'
+    

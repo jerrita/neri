@@ -1,0 +1,49 @@
+
+config smartdns
+	option server_name 'smartdns'
+	option port '6051'
+	option server_group 'oversea'
+	option seconddns_port '6050'
+	option seconddns_tcp_server '1'
+	option redirect 'dnsmasq-upstream'
+	option seconddns_server_group 'mainland'
+	option prefetch_domain '1'
+	option serve_expired '1'
+	option tcp_server '1'
+	option seconddns_no_cache '1'
+	option ipv6_server '0'
+	option dualstack_ip_selection '0'
+	option cache_size '102400'
+	option enabled '0'
+	option seconddns_enabled '0'
+
+config server
+	option type 'udp'
+	option name 'CQUPT'
+	option ip '202.202.32.33'
+	option server_group 'mainland'
+	option enabled '1'
+	option addition_arg '-exclude-default-group'
+
+config server
+	option type 'udp'
+	option name 'AliDNS'
+	option ip '223.5.5.5'
+	option server_group 'mainland'
+	option enabled '1'
+	option addition_arg '-exclude-default-group'
+
+config server
+	option type 'tls'
+	option server_group 'oversea'
+	option name 'Google TLS'
+	option enabled '1'
+	option ip '8.8.4.4'
+
+config server
+	option type 'tls'
+	option server_group 'oversea'
+	option ip '1.1.1.1'
+	option enabled '1'
+	option name 'Cloudflare TLS'
+	

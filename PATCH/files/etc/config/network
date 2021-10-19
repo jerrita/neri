@@ -1,0 +1,50 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'eth0'
+
+config device
+	option name 'eth0'
+
+config interface 'lan'
+	option device 'br-lan'
+	option proto 'static'
+	option ipaddr '192.168.2.1'
+	option netmask '255.255.255.0'
+
+config device
+	option name 'eth1'
+	option promisc '1'
+	option ipv6 '0'
+
+config device
+	option type 'macvlan'
+	option ifname 'eth1'
+	option mode 'vepa'
+	option name 'veth1'
+	option ipv6 '0'
+
+config device
+	option type 'macvlan'
+	option ifname 'eth1'
+	option mode 'vepa'
+	option name 'veth0'
+	option ipv6 '0'
+
+config interface 'wan_global'
+	option proto 'dhcp'
+	option device 'veth1'
+	option metric '1'
+	option delegate '0'
+
+config interface 'wan_local'
+	option proto 'dhcp'
+	option device 'veth0'
+	option delegate '0'

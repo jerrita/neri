@@ -43,8 +43,12 @@ config interface 'wan_global'
 	option device 'veth1'
 	option metric '1'
 	option delegate '0'
+	option force_link '1'
 
 config interface 'wan_local'
 	option proto 'dhcp'
 	option device 'veth0'
 	option delegate '0'
+	option force_link '1'
+	option metric '2'
+	

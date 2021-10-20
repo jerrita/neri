@@ -34,11 +34,11 @@ Another [YAOF](https://github.com/QiuSimons/YAOF) Fork For CQUPT
 - 支持 `L2TP` 拨号
 - 默认安装并启用 `kmod-macvlan` 并以此为基础进行内网分流
 - ssp 插件加入 obfs 混淆
-- 默认开启并调优 `sqm` 以优化 *20M 光宽带* 的连接体验
+- 默认开启并调优 `sqm` (默认 piece_of_cake) 以优化 **20M 光宽带** 的连接体验
 - 加入 `Material` 主题
 - 插件精简
 
-## 同时具有以下 `YAOF` 特性
+## 同时具有以下 `[YAOF](https://github.com/QiuSimons/YAOF)` 特性
 - 基于原生 `OpenWrt 21.02` 编译，默认管理地址 192.168.2.1
 - 默认开启了 `Software Offload`
 - 内置升级功能可用，物理 Reset 按键可用
@@ -47,5 +47,5 @@ Another [YAOF](https://github.com/QiuSimons/YAOF) Fork For CQUPT
 - R2S核心频率1.6（交换了LAN WAN）（建议使用5v4a电源，死机大多数情况下，都是因为你用的电源过于垃圾，另外，你也可以选择使用自带的app限制最大频率，茄子🍆）
 - O3 编译，CFLAG优化
 - ss 协议在 armv8 上实现了 aes 硬件加速（请仅使用 aead 加密的连接方式）
-- 集成并默认启用了UKSM，BBRv2，LRNG，以及CacULE Scheduler
-- 如有任何问题，请先尝试ssh进入后台，输入fuck后回车，等待机器重启后确认问题是否已经解决
+- 集成并默认启用了UKSM，BBRv2，LRNG，以及 CacULE Scheduler
+- 如有任何问题，请先尝试ssh进入后台，输入 fuck 后回车，等待机器重启后确认问题是否已经解决

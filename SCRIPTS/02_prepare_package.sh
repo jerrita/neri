@@ -7,6 +7,10 @@ sed -i 's/Os/O3 -funsafe-math-optimizations -funroll-loops -ffunction-sections -
 # 更新 Feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+# 更换默认主题
+sed -i 's/luci-theme-bootstrap/luci-theme-material/' feeds/luci/collections/luci/Makefile
+
 # 默认开启 Irqbalance
 sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
 # 移除 SNAPSHOT 标签

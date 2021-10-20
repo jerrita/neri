@@ -7,7 +7,7 @@ config queue 'eth1'
 	option debug_logging '0'
 	option verbosity '5'
 	option linklayer 'ethernet'
-	option overhead '48'
+	option overhead '44'
 	option download '18000'
 	option upload '18000'
     

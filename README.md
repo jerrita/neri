@@ -11,7 +11,7 @@ Another [YAOF](https://github.com/QiuSimons/YAOF) Fork For CQUPT
 </div>
 
 ## 简单描述
-众所周知，你校睿智的网关会在你登陆校园网后，帮你把内网速率也限制在20M以内，很不人性化。
+众所周知，你校睿智的网关会在你登陆校园网后，会帮你把内网速率也限制在20M以内，很不人性化。
 
 因此，本固件将通过在 `wan` 口起两个 `macvlan`，并自动配好分流的方式，
 
@@ -33,12 +33,16 @@ Another [YAOF](https://github.com/QiuSimons/YAOF) Fork For CQUPT
 ## 固件特性
 - 支持 `L2TP` 拨号
 - 默认安装并启用 `kmod-macvlan` 并以此为基础进行内网分流
-- ssp 插件加入 obfs 混淆
+- ssrp 插件加入 obfs 混淆
 - 默认开启并调优 `sqm` (默认 piece_of_cake) 以优化 **20M 光宽带** 的连接体验
 - 加入 `Material` 主题
 - 插件精简
 
-## 同时具有以下 `[YAOF](https://github.com/QiuSimons/YAOF)` 特性
+## TODO (Maybe)
+- [ ] 写一个 luci 插件用于自动登录校园网
+- [ ] 根据插件登陆账号的多少自动调整 `vlan` 与 负载均衡
+
+## 同时具有以下 [YAOF](https://github.com/QiuSimons/YAOF) 特性
 - 基于原生 `OpenWrt 21.02` 编译，默认管理地址 192.168.2.1
 - 默认开启了 `Software Offload`
 - 内置升级功能可用，物理 Reset 按键可用

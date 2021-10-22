@@ -11,7 +11,7 @@ Another [YAOF](https://github.com/QiuSimons/YAOF) Fork For CQUPT
 </div>
 
 ## 简单描述
-众所周知，你校逆天的网关会在你登陆校园网后，会帮你把内网速率也限制在20M以内，非常的人性化。
+众所周知，你校逆天的网关在你登陆校园网后，会帮你把内网速率也限制在20M以内，非常的人性化。
 
 因此，本固件将通过在 `wan` 口起两个 `macvlan`，并自动配好分流的方式，
 
@@ -34,12 +34,13 @@ Another [YAOF](https://github.com/QiuSimons/YAOF) Fork For CQUPT
 - 支持 `L2TP` 拨号
 - 默认安装并启用 `kmod-macvlan` 并以此为基础进行内网分流
 - ssrp 插件加入 obfs 混淆
-- 默认开启并调优 `sqm` (默认 piece_of_cake) 以优化 **20M 光宽带** 的连接体验
+- 默认开启并调优 `sqm` (默认 `piece_of_cake`) 以优化 **20M 光宽带** 的连接体验
 - 加入 `Material` 主题
 - 插件精简
 
 ## 手动负载均衡指南
 > 当你有多个校园网账号时，你可暂时用以下方式进行负载均衡
+> 
 > 想蹲一个佬写个 luci，不知道能不能等到 =、=
 1. 进入网络 -> 接口 -> 设备，新增一个 `MAC VLAN` 并命名
 2. 进入网络 -> 接口 -> 接口，新增一个 DHCP 客户端，选择上一步添加的虚拟网卡（记得手动指定跃点）
@@ -50,7 +51,7 @@ Another [YAOF](https://github.com/QiuSimons/YAOF) Fork For CQUPT
 - 策略：新建策略 `balance`，添加你想负载均衡的所有接口（不包括 `wan_local`）
 - 规则：添加 login 规则，将 `192.168.200.2/32` 分配到你需要登陆的接口
 - 规则：修改 default 规则，将策略改为 `balance`
-5. 打开 网络 -> SQM QoS，添加实例，上下行限速为 18000（不！要！填！20000），队列使用 `cake: piece_of_cake`，数据包开销为 44
+5. 打开 网络 -> SQM QoS，添加实例，上下行限速为 18000，队列使用 `cake: piece_of_cake`，数据包开销为 44
 6. 保存并应用
 7. 浏览器打开 `192.168.200.2` 进行登陆
 8. (Optional) 转第四步，更改 `login` 的接口为其他未登陆的接口
